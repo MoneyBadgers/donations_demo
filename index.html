@@ -1,0 +1,203 @@
+<script>
+    function setOrderId() {
+        var email = document.getElementById('email').value;
+        var timestamp = new Date().getTime();
+        var orderId = email + '-' + timestamp;
+        document.getElementById('orderId').value = orderId;
+    }
+    function setAmountCents() {
+        var amount = document.getElementById('amount').value;
+        var amountCents = amount * 100;
+        document.getElementById('amountCents').value = amountCents;
+    }
+</script>
+
+<style>
+.donatebutton {
+        background-color: #00AAAC;
+        color: #fff;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        padding: 15px 25px 15px 25px;
+        border-radius: 3px;
+        text-align: center;
+    }
+
+label {
+        display: block;
+    }
+    
+input {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        width: 50%;
+    }
+
+a1 {
+        display: flex;
+        flex-direction: row;
+    }
+
+a1:before,
+a1:after {
+        content: "";
+        flex: 1 1;
+        border-bottom: 0.5px solid #c1c1c1;
+        margin: auto;
+    }
+    
+.iframeblockmain {
+        background-color: #F5F5F5;
+        padding: 40px;
+    }
+
+@media only screen and (max-width: 640px) {
+        .iframeblockmain {
+            padding: 15px;
+        }
+    }
+
+.iframeblocksub {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 25px;
+        max-width: 600px;
+        margin: auto;
+        border-bottom: 2px solid #ccc;
+    }
+
+@media only screen and (max-width: 640px) {
+        .iframeblocksub {
+            padding: 20px;
+        }
+    }
+
+    .iframedonateblock {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        border-color: #c1c1c1;
+        border: 0.5px solid #c1c1c1;
+    }
+
+    @media only screen and (max-width: 640px) {
+        .iframedonateblock {
+            padding: 25px 20px;
+        }
+    }
+
+.iframetitleblock {
+        background-color: #00AAAC;
+        background-image: url("https://images.squarespace-cdn.com/content/v1/63407889ce17f75729216bec/12372d05-7347-49aa-bdcf-fbb43a979d92/first-national-bank-seeklogo-2-02.png?format=1000w");
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+         background-size: 100%;
+    }
+
+@media only screen and (max-width: 640px) {
+        .iframetitleblock {
+            padding: 0px 0px 20px 0px;
+        }
+    }
+
+.FNBlogo {
+        max-width: 100px;
+        margin-bottom: 0px;
+    }
+
+@font-face {
+        font-family: fnb;
+        src: url('https://static1.squarespace.com/static/63407889ce17f75729216bec/t/6655b7e0dada052152dc4481/1716893664466/fnb_sans-regular-webfont.woff');
+    }
+
+.headlinefont {
+        font-family: fnb;
+        font-size: 35px;
+        color: #fff;
+        line-height: 1.3em;
+    }
+
+    .p-1 {
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.5em;
+        margin-left: 0px;
+        font-family: dmp;
+    }
+
+    .p-2 {
+        font-size: 16px;
+        color: #000;
+        font-weight: 400;
+        line-height: 1.5em;
+        font-family: dmp;
+    }
+
+@font-face {
+        font-family: dmp;
+        src: url('https://static1.squarespace.com/static/63407889ce17f75729216bec/t/6655b7e0dada052152dc4481/1716893664466/fnb_sans-regular-webfont.woff');
+    }
+
+
+    .subheadlinefont {
+        color: #000;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 1.2em;
+    }
+</style>
+
+<div class="iframeblockmain">
+    <div class="iframeblocksub">
+<img class="FNBlogo"
+src="https://images.squarespace-cdn.com/content/v1/63407889ce17f75729216bec/5aaccefd-0297-4f1c-be47-049c999f59f6/Asset+1.png?format=1000w"
+style="max-width: 90px; margin-bottom: 20px;">
+
+<div class="iframetitleblock">
+<div style="width: 50%">
+<div class="headlinefont">FNB Care <b>Lorem Ipsum</b></div></div>
+            <br>
+            <div class="red_quote_line">
+                <div style="width: 50%"><div class="p-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div></div>
+            </div>
+</div>
+
+<div class="iframedonateblock">
+<div class="subheadlinefont" style="font-family:fnb">Donate with Cryptocurrency</div><br>
+
+<p class="p-2">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+
+<label class="p-2" for="amount">Amount (Rands):</label>
+
+<input type="number" id="amount" name="amount" onchange="setAmountCents()" value="250" required><br><br>
+
+<label class="p-2" for="email">Your Email Address:</label>
+            <input type="email" id="email" name="email" onchange="setOrderId()" required><br><br>
+
+<form id="donationForm" action="https://pay.cryptoqr.co.za/" method="GET" target="_BLANK">
+
+<input type="hidden" id="merchantCode" name="merchantCode" value="prodtest">
+<input type="hidden" id="amountCents" name="amountCents" value="25000">
+                <input type="hidden" id="description" name="description" value="Donation to Daily Maverick">
+                <input type="hidden" id="orderId" name="orderId" value="">
+
+<button type="submit" class="donatebutton">
+                    Donate
+                </button>
+            </form>
+
+<br>
+
+<p class="p-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br> Thank you.
+            </div>
+        </div>
+    </div>
